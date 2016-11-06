@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html ng-app="Contactapp"><!เพื่อให้รู้ว่าเป็น amgular js app>
+  <head>
+    <meta charset="utf-8">
+    <title>Welcome angular JS </title>
+        <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"><!แค่แสดงผลbootstrap ใส่แค่นี้ก็พอนะ>
+  </head>
+  <body ng-controller = "ListContactController">
+    <div class = "container">
+      <div ng-controller = "ListContactController">
+        <table border = '1' class="table table-hover">
+          <thead>
+            <tr>
+              <th>Fullname</th>
+              <th>Nickname</th>
+              <th>Phone</th>
+            </tr>
+          </thead>
+
+          <tbody>
+          <tr ng-repeat="contact in contacts"> <!contact = ชื่ื่อตัวแปรของ loop, contacts =array ของ app.js>
+            <td>{{ contact.fullname }}</td>
+            <td>{{ contact.nickname }}</td>
+            <td>{{ contact.phone }}</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+    <div ng-controller = "AddContactController">
+      <form name="contactForm">
+        <div class="form-group">
+          <label for="fullname">Fullname </label>
+          <input type="text" name="fullname" class="form-control" id placeholder="Fullname" ng-model = "fullname"><br/>
+        </div>
+        <div class="form-group">
+          <label for="nickname">Nickname </label>
+          <input type="text" name="fullname" class="form-control" id placeholder="Nickname" ng-model = "nickname"><br/>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone </label>
+          <input type="text" name="phone" class="form-control" id placeholder="Phone" ng-model = "phone"><br/>
+        </div>
+        <button class="btn btn-default" type="button" ng-click="add()">Add Contact</button>
+        <!-- <button ng-click="save()"> Add Contact</button>
+        <button type="button" class="btn btn-primary" name="button"> Start Engine</button>-->
+      </form>
+    </div>
+  </div>
+    <script src="node_modules/angular/angular.js" charset="utf-8"></script>
+    <script src="app.js"></script>
+    <!--<script src="node_modules/jquery/dist/jquery.min.js"></script>-->
+    <!--<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>-->
+
+  </body>
+</html>
