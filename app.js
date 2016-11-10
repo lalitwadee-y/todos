@@ -14,8 +14,11 @@ angular.module ('Contactapp',[])
       self.contacts.push(contact)
     }
   })
-
+  //อยากมีกี่ service ก็เพิ่มขึ้นได้
   .controller('ListContactController',function($scope, contactService){
+
+    $scope.contacts = contactService.list()
+
   })
 
   .controller('AddContactController', function ($scope, contactService){
@@ -31,5 +34,7 @@ angular.module ('Contactapp',[])
     function resetForm() {
       $scope.message = ''
     }
+
+
 
   })
