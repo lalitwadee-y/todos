@@ -6,13 +6,14 @@
         <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
   </head>
   <body ng-controller = "ListTodosController">
+    <center>
     <div class = "container">
 
       <div ng-controller = "AddTodosController">
         <form name="todoForm">
           <div class="form-group">
-            <center><label for="message">TODOS </label><br/></center>
-            <input type="text" name="message" class="form-control" placeholder="What needs to be done?" ng-model = "message"  required><br/>
+            <center><label for="title">TODOS </label><br/></center>
+            <input type="text" name="title" class="form-control" placeholder="What needs to be done?" ng-model = "title"  required><br/>
           </div>
           <center><button class="btn btn-default" type="button" ng-click="add()" ng-disabled="todoForm.$invalid">Add </button></center>
         </form>
@@ -23,13 +24,13 @@
           <thead>
             <tr>
               <th>Checkbox</th>
-              <th>Message</th>
+              <th>Title</th>
               <th>State</th>
             </tr>
           </thead>
 
           <tbody>
-          <tr ng-repeat="todo in todos"> <!contact = ชื่ื่อตัวแปรของ loop, contacts =array ของ app.js>
+          <tr ng-repeat="text in todos"> <!contact = ชื่ื่อตัวแปรของ loop, contacts =array ของ app.js>
             <td>
               <div class="checkbox">
                 <label>
@@ -37,10 +38,9 @@
                 </label>
               </div>
             </td>
-            <td>{{ todo.message }}</td>
-            <td> <span ng-if="checked" class="animate-if">
-              complete
-            </span> </td>
+            <td>{{ text.title }}</td>
+            <td> <span ng-if="checked" class="animate-if">  done</span>
+           </td>
           </tr>
         </tbody>
       </table>
@@ -50,8 +50,8 @@
   </div>
     <script src="node_modules/angular/angular.js" charset="utf-8"></script>
     <script src="app.js"></script>
-    <!--<script src="node_modules/jquery/dist/jquery.min.js"></script>-->
-    <!--<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>-->
-
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  </center>
   </body>
 </html>
