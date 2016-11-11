@@ -1,24 +1,24 @@
 <!DOCTYPE html>
-<html ng-app="Contactapp">
+<html ng-app="Todosapp">
   <head>
     <meta charset="utf-8">
-    <title>Welcome angular JS </title>
+    <title>TODOS </title>
         <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
   </head>
-  <body ng-controller = "ListContactController">
+  <body ng-controller = "ListTodosController">
     <div class = "container">
 
-      <div ng-controller = "AddContactController">
-        <form name="contactForm">
+      <div ng-controller = "AddTodosController">
+        <form name="todoForm">
           <div class="form-group">
             <center><label for="message">TODOS </label><br/></center>
             <input type="text" name="message" class="form-control" placeholder="What needs to be done?" ng-model = "message"  required><br/>
           </div>
-          <center><button class="btn btn-default" type="button" ng-click="add()" ng-disabled="contactForm.$invalid">Add </button></center>
+          <center><button class="btn btn-default" type="button" ng-click="add()" ng-disabled="todoForm.$invalid">Add </button></center>
         </form>
       </div>
 
-      <div ng-controller = "ListContactController">
+      <div ng-controller = "ListTodosController">
         <table class="table">
           <thead>
             <tr>
@@ -29,7 +29,7 @@
           </thead>
 
           <tbody>
-          <tr ng-repeat="contact in contacts"> <!contact = ชื่ื่อตัวแปรของ loop, contacts =array ของ app.js>
+          <tr ng-repeat="todo in todos"> <!contact = ชื่ื่อตัวแปรของ loop, contacts =array ของ app.js>
             <td>
               <div class="checkbox">
                 <label>
@@ -37,7 +37,7 @@
                 </label>
               </div>
             </td>
-            <td>{{ contact.message }}</td>
+            <td>{{ todo.message }}</td>
             <td> <span ng-if="checked" class="animate-if">
               complete
             </span> </td>
