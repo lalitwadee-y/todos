@@ -1,33 +1,33 @@
-angular.module ('Contactapp',[])
-  .service('contactService',function(){
+angular.module ('Todosapp',[])
+  .service('TodosService',function(){
     var self = this //เก็บ reference this ไว้ก่อน
 
-    self.contacts = [
+    self.todos = [
       {message:"hey yo!"}
     ]
 
     self.list = function(){
-      return self.contacts
+      return self.todos
     }
 
-    self.add = function(contact){
-      self.contacts.push(contact)
+    self.add = function(todo){
+      self.todos.push(todo)
     }
   })
   //อยากมีกี่ service ก็เพิ่มขึ้นได้
-  .controller('ListContactController',function($scope, contactService){
+  .controller('ListTodosController',function($scope, TodosService){
 
-    $scope.contacts = contactService.list()
+    $scope.todos = TodosService.list()
 
   })
 
-  .controller('AddContactController', function ($scope, contactService){
+  .controller('AddTodosController', function ($scope, TodosService){
     $scope.add = function(){
-    var contact = {
+    var todo = {
         message: $scope.message
       }
 
-      contactService.add(contact)
+      TodosService.add(todo)
       resetForm()
     }
 
