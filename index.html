@@ -30,16 +30,16 @@
           </thead>
 
           <tbody>
-          <tr ng-repeat="text in todos"> <!contact = ชื่ื่อตัวแปรของ loop, contacts =array ของ app.js>
+          <tr ng-repeat="todo in todos"> <!contact = ชื่ื่อตัวแปรของ loop, contacts =array ของ app.js>
             <td>
               <div class="checkbox">
                 <label>
-                  <input type="checkbox" ng-model="checked" ng-init="checked=false">
+                  <input type="checkbox" ng-checked=" " ng-model="checked" ng-init="checked=false">
                 </label>
               </div>
             </td>
-            <td>{{ text.title }}</td>
-            <td> <span ng-if="checked" class="animate-if">  done</span>
+            <td>{{ todo.title }}</td>
+            <td> <span ng-if="checked" class="animate-if">  complete</span>
            </td>
           </tr>
         </tbody>
