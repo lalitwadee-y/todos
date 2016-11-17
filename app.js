@@ -3,8 +3,9 @@ angular.module ('Todosapp',[])
     var self = this //เก็บ reference this ไว้ก่อน
 
     self.todos = [
-      {title:"hey yo!", done: true},
-      {title:"hello", done: false}
+
+      {title:"test_true", done: true},
+      {title:"test_false", done: false}
     ]
 
     self.list = function(){

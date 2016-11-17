@@ -32,12 +32,15 @@
             </tr>
           </thead>
 
-          <tbody >
+          <tbody>
+
           <tr ng-repeat="todo in todos"> <!contact = ชื่ื่อตัวแปรของ loop, contacts =array ของ app.js>
             <td>
               <div class="checkbox" >
                 <label>
+
                   <input type="checkbox" ng-init ='done = todo.done' ng-model = 'done' >
+
                 </label>
               </div>
             </td>
