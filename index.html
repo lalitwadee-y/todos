@@ -10,14 +10,17 @@
     <div class = "container">
 
       <div ng-controller = "AddTodosController">
+        <div>
         <form name="todoForm">
           <div class="form-group">
             <center><label for="title">TODOS </label><br/></center>
-            <input type="text" name="title" class="form-control" placeholder="What needs to be done?" ng-model = "title"  required><br/>
+            <input type="text" name="title" class="form-control" placeholder="What needs to be done?" ng-model = "title" required ><br/>
           </div>
           <center><button class="btn btn-default" type="button" ng-click="add()" ng-disabled="todoForm.$invalid">Add </button></center>
+          <!--ng-disabled="todoForm.$invalid" required-->
         </form>
       </div>
+    </div>
 
       <div ng-controller = "ListTodosController">
         <table class="table">
@@ -29,17 +32,19 @@
             </tr>
           </thead>
 
-          <tbody>
-          <tr ng-repeat="text in todos"> <!contact = ชื่ื่อตัวแปรของ loop, contacts =array ของ app.js>
+          <tbody >
+          <tr ng-repeat="todo in todos"> <!contact = ชื่ื่อตัวแปรของ loop, contacts =array ของ app.js>
             <td>
-              <div class="checkbox">
+              <div class="checkbox" >
                 <label>
-                  <input type="checkbox" ng-model="checked" ng-init="checked=false">
+                  <input type="checkbox" ng-init ='done = todo.done' ng-model = 'done' >
                 </label>
               </div>
             </td>
-            <td>{{ text.title }}</td>
-            <td> <span ng-if="checked" class="animate-if">  done</span>
+            <td>{{ todo.title }}</td>
+            <td><div ng-if = 'done'>complete</div>
+              <!--{{checkboxModel.done}} -->
+              <!-- <span ng-if="checked" class="animate-if">  done</span> -->
            </td>
           </tr>
         </tbody>

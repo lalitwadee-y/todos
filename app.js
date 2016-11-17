@@ -2,39 +2,38 @@ angular.module ('Todosapp',[])
   .service('TodosService',function(){
     var self = this //เก็บ reference this ไว้ก่อน
 
-    self.texts = [
-      {title:"hey yo!"}
+    self.todos = [
+      {title:"hey yo!", done: true},
+      {title:"hello", done: false}
     ]
 
     self.list = function(){
-      return self.texts
+      return self.todos
     }
 
-    self.add = function(text){
-      self.texts.push(text)
+    self.add = function(todo){
+      self.todos.push(todo)
     }
   })
   //อยากมีกี่ service ก็เพิ่มขึ้นได้
   .controller('ListTodosController',function($scope, TodosService){
 
-    $scope.texts = TodosService.list()
+    $scope.todos = TodosService.list()
 
   })
 
   .controller('AddTodosController', function ($scope, TodosService){
     $scope.add = function(){
-    var text = {
-        title: $scope.title
+    var todo = {
+        title: $scope.title,
+        done : false
       }
 
-      TodosService.add(text)
+      TodosService.add(todo)
       resetForm()
     }
 
     function resetForm() {
       $scope.title = ''
     }
-
-
-
   })
