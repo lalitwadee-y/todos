@@ -11,19 +11,19 @@
 
       <div ng-controller = "AddTodosController">
         <div>
-        <form name="todoForm">
+        <form name="todoForm" >
           <div class="form-group">
-            <center><label for="title">TODOS </label><br/></center>
-            <input type="text" name="title" class="form-control" placeholder="What needs to be done?" ng-model = "title" required ><br/>
+            <br><br><center><font size="7" face='Conv' color=#DA70D6  ><label for="title">TODOS </label></font><br/></center>
+            <input type="text"  name="title" class="form-control" placeholder="What needs to be done?" ng-model = "title" required ><br/>
           </div>
-          <center><button class="btn btn-default" type="button" ng-click="add()" ng-disabled="todoForm.$invalid">Add </button></center>
+          <center><button class="btn btn-primary btn-lg active" type="button" ng-click="add()" ng-disabled="todoForm.$invalid">Add </button></center>
           <!--ng-disabled="todoForm.$invalid" required-->
         </form>
       </div>
     </div>
 
       <div ng-controller = "ListTodosController">
-        <table class="table">
+        <table class="table table-hover">
           <thead>
             <tr>
               <th>Checkbox</th>
